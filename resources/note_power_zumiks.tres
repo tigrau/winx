@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="NovelNote" load_steps=3 format=3 uid="uid://b344q7npdqy17"]
+
+[ext_resource type="Script" path="res://nove_button.gd" id="1_2vylg"]
+[ext_resource type="Script" path="res://novel_note.gd" id="2_rracs"]
+
+[resource]
+script = ExtResource("2_rracs")
+text = "Сила Зумикс
+Эти крылья позволяют перенестись в любое место за долю секунды. При этом фея может взять с собой «пассажира», чтобы он тоже ощутил прелесть телепортации. "
+options = Array[ExtResource("1_2vylg")]([])

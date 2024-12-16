@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="NovelNote" load_steps=3 format=3 uid="uid://clxnaco6g5iem"]
+
+[ext_resource type="Script" path="res://nove_button.gd" id="1_4cfy4"]
+[ext_resource type="Script" path="res://novel_note.gd" id="2_lrqaj"]
+
+[resource]
+script = ExtResource("2_lrqaj")
+text = "Сила Трацикс
+С помощью этой силы можно оказываться в прошлом, или, точнее, просматривать его. Она позволяет видеть тот момент, когда происходит определённое событие, интересующее фею. В событиях, которые показывает Трасикс, нельзя участвовать — только смотреть. Это путешествие во времени длится лишь несколько секунд."
+options = Array[ExtResource("1_4cfy4")]([])

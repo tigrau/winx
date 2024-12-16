@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="NovelNote" load_steps=7 format=3 uid="uid://dpn5b0ie44sts"]
+
+[ext_resource type="Script" path="res://nove_button.gd" id="1_3p8ef"]
+[ext_resource type="Resource" uid="uid://buk0w4aoyuttu" path="res://resources/note_12.tres" id="2_b0o1u"]
+[ext_resource type="Script" path="res://novel_note.gd" id="2_xt5ux"]
+[ext_resource type="Resource" uid="uid://dahc7qtal0huv" path="res://resources/note_7.tres" id="3_dfosh"]
+
+[sub_resource type="Resource" id="Resource_tqdjr"]
+script = ExtResource("1_3p8ef")
+text = "Да"
+destionation = ExtResource("2_b0o1u")
+
+[sub_resource type="Resource" id="Resource_7udj7"]
+script = ExtResource("1_3p8ef")
+text = "Нет"
+destionation = ExtResource("3_dfosh")
+
+[resource]
+script = ExtResource("2_xt5ux")
+text = "Веришь в ультро-технологичное будущее?"
+options = Array[ExtResource("1_3p8ef")]([SubResource("Resource_tqdjr"), SubResource("Resource_7udj7")])

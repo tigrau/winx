@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="NovelNote" load_steps=7 format=3 uid="uid://cs8b75egwyb1w"]
+
+[ext_resource type="Script" path="res://nove_button.gd" id="1_olli8"]
+[ext_resource type="Script" path="res://novel_note.gd" id="2_vfcl3"]
+[ext_resource type="Resource" uid="uid://dihe81s6gnxqi" path="res://resources/note_10.tres" id="2_y702p"]
+[ext_resource type="Resource" uid="uid://d0qbrepcc4pj4" path="res://resources/note_6.tres" id="3_xfme6"]
+
+[sub_resource type="Resource" id="Resource_tqdjr"]
+script = ExtResource("1_olli8")
+text = "Да"
+destionation = ExtResource("2_y702p")
+
+[sub_resource type="Resource" id="Resource_7udj7"]
+script = ExtResource("1_olli8")
+text = "Нет"
+destionation = ExtResource("3_xfme6")
+
+[resource]
+script = ExtResource("2_vfcl3")
+text = "Ты никогда не лжешь, даже для благой цели?"
+options = Array[ExtResource("1_olli8")]([SubResource("Resource_tqdjr"), SubResource("Resource_7udj7")])

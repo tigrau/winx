@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://bqcmmv7vh5xa3"]
+
+[ext_resource type="Texture2D" uid="uid://c3gu0kbq8f1tb" path="res://addons/kenney_particle_pack/magic_05.png" id="1_u5qlj"]
+
+[sub_resource type="Curve" id="Curve_toej2"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.748555, 0.992647), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_ix3dr"]
+curve = SubResource("Curve_toej2")
+
+[sub_resource type="Gradient" id="Gradient_gknye"]
+colors = PackedColorArray(0, 0.615686, 1, 1, 1, 0, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2m1jq"]
+gradient = SubResource("Gradient_gknye")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_oyd6p"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 300.0
+initial_velocity_max = 300.0
+gravity = Vector3(0, 0, 0)
+color_ramp = SubResource("GradientTexture1D_2m1jq")
+alpha_curve = SubResource("CurveTexture_ix3dr")
+
+[node name="GPUParticles2D" type="GPUParticles2D"]
+process_material = SubResource("ParticleProcessMaterial_oyd6p")
+texture = ExtResource("1_u5qlj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

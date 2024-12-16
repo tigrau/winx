@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="NovelNote" load_steps=7 format=3 uid="uid://d0qbrepcc4pj4"]
+
+[ext_resource type="Script" path="res://nove_button.gd" id="1_s4fxg"]
+[ext_resource type="Resource" uid="uid://dahc7qtal0huv" path="res://resources/note_7.tres" id="2_3630t"]
+[ext_resource type="Script" path="res://novel_note.gd" id="2_yoa06"]
+[ext_resource type="Resource" uid="uid://dpn5b0ie44sts" path="res://resources/note_11.tres" id="3_bg5ng"]
+
+[sub_resource type="Resource" id="Resource_tqdjr"]
+script = ExtResource("1_s4fxg")
+text = "Да"
+destionation = ExtResource("2_3630t")
+
+[sub_resource type="Resource" id="Resource_7udj7"]
+script = ExtResource("1_s4fxg")
+text = "Нет"
+destionation = ExtResource("3_bg5ng")
+
+[resource]
+script = ExtResource("2_yoa06")
+text = "Закрой глаза: можешь представить, что будет завтра?"
+options = Array[ExtResource("1_s4fxg")]([SubResource("Resource_tqdjr"), SubResource("Resource_7udj7")])

@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="NovelNote" load_steps=7 format=3 uid="uid://bohcg7rs7ipo5"]
+
+[ext_resource type="Script" path="res://nove_button.gd" id="1_68ioa"]
+[ext_resource type="Script" path="res://novel_note.gd" id="2_6l74o"]
+[ext_resource type="Resource" uid="uid://78n5djxim855" path="res://resources/note_2.tres" id="2_061s6"]
+[ext_resource type="Resource" uid="uid://b31aof0lgapcn" path="res://resources/note_5.tres" id="3_vejoe"]
+
+[sub_resource type="Resource" id="Resource_tqdjr"]
+script = ExtResource("1_68ioa")
+text = "Да"
+destionation = ExtResource("2_061s6")
+
+[sub_resource type="Resource" id="Resource_7udj7"]
+script = ExtResource("1_68ioa")
+text = "Нет"
+destionation = ExtResource("3_vejoe")
+
+[resource]
+script = ExtResource("2_6l74o")
+text = "Тебе нравится винтажный стиль?"
+options = Array[ExtResource("1_68ioa")]([SubResource("Resource_tqdjr"), SubResource("Resource_7udj7")])

@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="NovelNote" load_steps=7 format=3 uid="uid://78n5djxim855"]
+
+[ext_resource type="Script" path="res://nove_button.gd" id="1_1uvov"]
+[ext_resource type="Resource" uid="uid://cn67u25dg466k" path="res://resources/note_3.tres" id="2_0lobv"]
+[ext_resource type="Script" path="res://novel_note.gd" id="2_q0shq"]
+[ext_resource type="Resource" uid="uid://d0qbrepcc4pj4" path="res://resources/note_6.tres" id="3_bi0hk"]
+
+[sub_resource type="Resource" id="Resource_tqdjr"]
+script = ExtResource("1_1uvov")
+text = "Да"
+destionation = ExtResource("2_0lobv")
+
+[sub_resource type="Resource" id="Resource_7udj7"]
+script = ExtResource("1_1uvov")
+text = "Нет"
+destionation = ExtResource("3_bi0hk")
+
+[resource]
+script = ExtResource("2_q0shq")
+text = "Ты хотел бы оказаться в прошлом?"
+options = Array[ExtResource("1_1uvov")]([SubResource("Resource_tqdjr"), SubResource("Resource_7udj7")])

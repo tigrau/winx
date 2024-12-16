@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="NovelNote" load_steps=7 format=3 uid="uid://dahc7qtal0huv"]
+
+[ext_resource type="Script" path="res://nove_button.gd" id="1_ypo7f"]
+[ext_resource type="Resource" uid="uid://btif3xayp2x5k" path="res://resources/note_8.tres" id="2_3umnl"]
+[ext_resource type="Script" path="res://novel_note.gd" id="2_5382g"]
+[ext_resource type="Resource" uid="uid://cjtuipnr7um23" path="res://resources/note_4.tres" id="3_sj3f3"]
+
+[sub_resource type="Resource" id="Resource_tqdjr"]
+script = ExtResource("1_ypo7f")
+text = "Да"
+destionation = ExtResource("2_3umnl")
+
+[sub_resource type="Resource" id="Resource_7udj7"]
+script = ExtResource("1_ypo7f")
+text = "Нет"
+destionation = ExtResource("3_sj3f3")
+
+[resource]
+script = ExtResource("2_5382g")
+text = "Ты часто думаешь, чем будешь заниматься, когда вырастешь?"
+options = Array[ExtResource("1_ypo7f")]([SubResource("Resource_tqdjr"), SubResource("Resource_7udj7")])

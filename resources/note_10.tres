@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="NovelNote" load_steps=7 format=3 uid="uid://dihe81s6gnxqi"]
+
+[ext_resource type="Script" path="res://nove_button.gd" id="1_g2yee"]
+[ext_resource type="Script" path="res://novel_note.gd" id="2_eu1oy"]
+[ext_resource type="Resource" uid="uid://dpn5b0ie44sts" path="res://resources/note_11.tres" id="2_w1f05"]
+[ext_resource type="Resource" uid="uid://d0qbrepcc4pj4" path="res://resources/note_6.tres" id="3_7u3ix"]
+
+[sub_resource type="Resource" id="Resource_tqdjr"]
+script = ExtResource("1_g2yee")
+text = "Да"
+destionation = ExtResource("2_w1f05")
+
+[sub_resource type="Resource" id="Resource_7udj7"]
+script = ExtResource("1_g2yee")
+text = "Нет"
+destionation = ExtResource("3_7u3ix")
+
+[resource]
+script = ExtResource("2_eu1oy")
+text = "У тебя развито воображение?"
+options = Array[ExtResource("1_g2yee")]([SubResource("Resource_tqdjr"), SubResource("Resource_7udj7")])

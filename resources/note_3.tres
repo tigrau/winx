@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="NovelNote" load_steps=7 format=3 uid="uid://cn67u25dg466k"]
+
+[ext_resource type="Script" path="res://nove_button.gd" id="1_btetg"]
+[ext_resource type="Script" path="res://novel_note.gd" id="2_acdos"]
+[ext_resource type="Resource" uid="uid://cjtuipnr7um23" path="res://resources/note_4.tres" id="2_s4a7v"]
+[ext_resource type="Resource" uid="uid://dahc7qtal0huv" path="res://resources/note_7.tres" id="3_jrbnv"]
+
+[sub_resource type="Resource" id="Resource_tqdjr"]
+script = ExtResource("1_btetg")
+text = "Да"
+destionation = ExtResource("2_s4a7v")
+
+[sub_resource type="Resource" id="Resource_7udj7"]
+script = ExtResource("1_btetg")
+text = "Нет"
+destionation = ExtResource("3_jrbnv")
+
+[resource]
+script = ExtResource("2_acdos")
+text = "Ты легко запоминаешь номера телефонов своих друзей?"
+options = Array[ExtResource("1_btetg")]([SubResource("Resource_tqdjr"), SubResource("Resource_7udj7")])

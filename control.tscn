@@ -1,0 +1,137 @@
+[gd_scene load_steps=9 format=3 uid="uid://bwicpsvs1r8bm"]
+
+[ext_resource type="Texture2D" uid="uid://nl5h0vnks0ym" path="res://c1a6e3d85954c73f4bcf7703d6d54b2e.jpg" id="1_3xh1t"]
+[ext_resource type="Script" path="res://control.gd" id="1_swuj4"]
+[ext_resource type="Texture2D" uid="uid://b3esm2hj42t8m" path="res://tile_0001.png" id="2_qykhe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yvck3"]
+bg_color = Color(0.517647, 0.317647, 0.192157, 0)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="Theme" id="Theme_3pav0"]
+Button/styles/normal = SubResource("StyleBoxFlat_yvck3")
+
+[sub_resource type="Animation" id="Animation_mabnb"]
+resource_name = "new_animation"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_atbpu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_11r3p"]
+_data = {
+"RESET": SubResource("Animation_atbpu"),
+"new_animation": SubResource("Animation_mabnb")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_swuj4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_3xh1t")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Panel"]
+self_modulate = Color(0.968627, 0.627451, 1, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -201.0
+offset_top = -29.0
+offset_right = 201.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_qykhe")
+region_rect = Rect2(-2.83128, -1.25128, 37.5309, 35.0288)
+patch_margin_left = 9
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 7
+
+[node name="Button" type="Button" parent="Panel/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_3pav0")
+text = "Узнать какой силой из Винкс ты обладаешь."
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_11r3p")
+}
+autoplay = "new_animation"
+
+[connection signal="pressed" from="Panel/NinePatchRect/Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="NovelNote" load_steps=3 format=3 uid="uid://ul44ejh52tjj"]
+
+[ext_resource type="Script" path="res://nove_button.gd" id="1_aebyp"]
+[ext_resource type="Script" path="res://novel_note.gd" id="2_el2ir"]
+
+[resource]
+script = ExtResource("2_el2ir")
+text = "Cила Спидекс
+Благодаря этой силе фея может перемещаться со сверхзвуковой скоростью и уворачиваться от магических лучей и нападения из засады.
+
+Поначалу Винкс редко пользовались силами Спидикса, однако в схватках с феями Небулы и Морганы активно использовали их, поскольку феи Войны не обладали столь мощной магической энергией, как Винкс, но очень быстро летали, а их оружием были скипетры, из которых феи-мстительницы метали магические огненные сферы. "
+options = Array[ExtResource("1_aebyp")]([])

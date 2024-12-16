@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="NovelNote" load_steps=7 format=3 uid="uid://cjtuipnr7um23"]
+
+[ext_resource type="Script" path="res://nove_button.gd" id="1_lpq6i"]
+[ext_resource type="Resource" uid="uid://clxnaco6g5iem" path="res://resources/note_power_traciks.tres" id="2_yg3sc"]
+[ext_resource type="Script" path="res://novel_note.gd" id="2_ygxy8"]
+[ext_resource type="Resource" uid="uid://btif3xayp2x5k" path="res://resources/note_8.tres" id="3_ry2ct"]
+
+[sub_resource type="Resource" id="Resource_tqdjr"]
+script = ExtResource("1_lpq6i")
+text = "Да"
+destionation = ExtResource("2_yg3sc")
+
+[sub_resource type="Resource" id="Resource_7udj7"]
+script = ExtResource("1_lpq6i")
+text = "Нет"
+destionation = ExtResource("3_ry2ct")
+
+[resource]
+script = ExtResource("2_ygxy8")
+text = "Тебя Пригласили на маскарад, пойдешь?"
+options = Array[ExtResource("1_lpq6i")]([SubResource("Resource_tqdjr"), SubResource("Resource_7udj7")])

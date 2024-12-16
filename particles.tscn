@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3 uid="uid://dvb2442xydptf"]
+
+[ext_resource type="Texture2D" uid="uid://c3gu0kbq8f1tb" path="res://addons/kenney_particle_pack/magic_05.png" id="1_y5og5"]
+
+[sub_resource type="Curve" id="Curve_toej2"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.748555, 0.992647), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_ix3dr"]
+curve = SubResource("Curve_toej2")
+
+[sub_resource type="Gradient" id="Gradient_gknye"]
+colors = PackedColorArray(0, 0.615686, 1, 1, 1, 0, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2m1jq"]
+gradient = SubResource("Gradient_gknye")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_oyd6p"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 300.0
+initial_velocity_max = 300.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.05
+scale_max = 0.1
+color_ramp = SubResource("GradientTexture1D_2m1jq")
+alpha_curve = SubResource("CurveTexture_ix3dr")
+hue_variation_min = -0.49
+hue_variation_max = 0.75
+
+[sub_resource type="Animation" id="Animation_pj23m"]
+resource_name = "new_animation"
+length = 2.0
+loop_mode = 2
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xskx6"]
+_data = {
+"new_animation": SubResource("Animation_pj23m")
+}
+
+[node name="GPUParticles2D" type="GPUParticles2D"]
+emitting = false
+amount = 40
+process_material = SubResource("ParticleProcessMaterial_oyd6p")
+texture = ExtResource("1_y5og5")
+one_shot = true
+explosiveness = 0.8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xskx6")
+}
+autoplay = "new_animation"

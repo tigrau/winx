@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="NovelNote" load_steps=7 format=3 uid="uid://b31aof0lgapcn"]
+
+[ext_resource type="Script" path="res://nove_button.gd" id="1_b4257"]
+[ext_resource type="Script" path="res://novel_note.gd" id="2_4ufch"]
+[ext_resource type="Resource" uid="uid://d0qbrepcc4pj4" path="res://resources/note_6.tres" id="2_q0ppm"]
+[ext_resource type="Resource" uid="uid://cs8b75egwyb1w" path="res://resources/note_9.tres" id="3_viwle"]
+
+[sub_resource type="Resource" id="Resource_tqdjr"]
+script = ExtResource("1_b4257")
+text = "Да"
+destionation = ExtResource("2_q0ppm")
+
+[sub_resource type="Resource" id="Resource_7udj7"]
+script = ExtResource("1_b4257")
+text = "Нет"
+destionation = ExtResource("3_viwle")
+
+[resource]
+script = ExtResource("2_4ufch")
+text = "Тебе нравится учиться?"
+options = Array[ExtResource("1_b4257")]([SubResource("Resource_tqdjr"), SubResource("Resource_7udj7")])

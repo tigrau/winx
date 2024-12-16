@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="NovelNote" load_steps=7 format=3 uid="uid://btif3xayp2x5k"]
+
+[ext_resource type="Script" path="res://nove_button.gd" id="1_nd45u"]
+[ext_resource type="Resource" uid="uid://b344q7npdqy17" path="res://resources/note_power_zumiks.tres" id="2_5u6jg"]
+[ext_resource type="Script" path="res://novel_note.gd" id="2_62yqv"]
+[ext_resource type="Resource" uid="uid://buk0w4aoyuttu" path="res://resources/note_12.tres" id="3_tmf1s"]
+
+[sub_resource type="Resource" id="Resource_tqdjr"]
+script = ExtResource("1_nd45u")
+text = "Да"
+destionation = ExtResource("2_5u6jg")
+
+[sub_resource type="Resource" id="Resource_7udj7"]
+script = ExtResource("1_nd45u")
+text = "Нет"
+destionation = ExtResource("3_tmf1s")
+
+[resource]
+script = ExtResource("2_62yqv")
+text = "Хочешь управлять космическим кораблем?"
+options = Array[ExtResource("1_nd45u")]([SubResource("Resource_tqdjr"), SubResource("Resource_7udj7")])
